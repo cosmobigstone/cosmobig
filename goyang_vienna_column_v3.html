@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다음 고양시장, 비엔나·코펜하겐처럼 만들 수 있는 사람이어야 한다</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif KR', 'Georgia', serif;
+    background: #faf8f5;
+    color: #2c2c2c;
+    line-height: 1.95;
+    font-size: 17px;
+  }
+  .wrapper {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 60px 32px 80px;
+  }
+  .label {
+    display: inline-block;
+    background: #1a3a5c;
+    color: #fff;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1.45;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-size: 15.5px;
+    color: #555;
+    font-family: sans-serif;
+    margin-bottom: 6px;
+    line-height: 1.7;
+    font-style: italic;
+  }
+  .byline {
+    font-size: 14px;
+    color: #888;
+    font-family: sans-serif;
+    margin-top: 14px;
+    margin-bottom: 36px;
+    border-bottom: 2px solid #1a3a5c;
+    padding-bottom: 18px;
+  }
+  h2 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1a3a5c;
+    margin: 48px 0 8px;
+    padding-left: 14px;
+    border-left: 4px solid #c0a050;
+    line-height: 1.45;
+  }
+  .sub-h2 {
+    font-size: 13.5px;
+    color: #888;
+    font-family: sans-serif;
+    margin: 0 0 18px 18px;
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 20px;
+    text-align: justify;
+    word-break: keep-all;
+  }
+  .highlight-box {
+    background: #f0f4f8;
+    border-left: 4px solid #1a3a5c;
+    padding: 18px 24px;
+    margin: 28px 0;
+    font-size: 15.5px;
+    color: #1a3a5c;
+    font-style: italic;
+    line-height: 1.85;
+  }
+  /* 통계 카드 */
+  .stat-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+  }
+  .stat-card {
+    flex: 1;
+    min-width: 148px;
+    background: #1a3a5c;
+    color: white;
+    border-radius: 6px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 26px;
+    font-weight: 800;
+    color: #f5c842;
+    display: block;
+    line-height: 1.2;
+  }
+  .stat-desc {
+    font-size: 12px;
+    color: #ccd8e8;
+    margin-top: 7px;
+    font-family: sans-serif;
+    line-height: 1.45;
+  }
+  /* 기대효과 블록 */
+  .effect-section {
+    margin: 44px 0 0;
+  }
+  .effect-group {
+    margin-bottom: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  .effect-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    font-weight: 800;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+  }
+  .effect-header.notenant { background: #1a3a5c; }
+  .effect-header.tenant   { background: #2d6a4f; }
+  .effect-header.citizen  { background: #5a4020; }
+  .effect-header.seoul    { background: #8b1a1a; }
+  .effect-header.gov      { background: #3a3a3a; }
+  .effect-badge {
+    background: rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .effect-body {
+    background: white;
+    padding: 20px 22px;
+  }
+  .effect-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .effect-item:last-child { margin-bottom: 0; }
+  .effect-icon {
+    font-size: 18px;
+    line-height: 1.6;
+    flex-shrink: 0;
+  }
+  .effect-text {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #222;
+    word-break: keep-all;
+  }
+  .effect-text strong {
+    font-weight: 700;
+    color: #111;
+  }
+  .effect-text em {
+    font-style: normal;
+    font-size: 13.5px;
+    color: #777;
+    display: block;
+    margin-top: 2px;
+    font-family: sans-serif;
+  }
+  /* 참고자료 */
+  .ref-section {
+    margin-top: 52px;
+    padding-top: 24px;
+    border-top: 1px solid #d4d0ca;
+  }
+  .ref-title {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: #333;
+    margin-bottom: 14px;
+  }
+  .ref-list {
+    list-style: none;
+    padding: 0;
+  }
+  .ref-list li {
+    font-size: 13px;
+    font-family: sans-serif;
+    color: #555;
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dotted #ddd;
+    position: relative;
+    line-height: 1.6;
+  }
+  .ref-list li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #c0a050;
+    font-weight: 700;
+  }
+  footer {
+    margin-top: 52px;
+    padding-top: 20px;
+    border-top: 2px solid #1a3a5c;
+    font-size: 14px;
+    color: #555;
+    font-family: sans-serif;
+    line-height: 1.8;
+  }
+  @media (max-width: 600px) {
+    body { font-size: 15.5px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 17px; }
+    .wrapper { padding: 36px 20px 60px; }
+    .stat-card { min-width: 130px; }
+    .effect-text { font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <span class="label">분석 칼럼 / 2026 고양시장 선거</span>
+
+  <h1>다음 고양시장,<br>비엔나·코펜하겐처럼 만들 수 있는 사람이어야 한다</h1>
+
+  <div class="subtitle">
+    — 세계 최고 도시의 비결은 공공임대, 고양시엔 그 씨앗이 있다 —<br>
+    — 유동화채권으로 공공임대를 열고, 서울 편입으로 규제를 푼다 —
+  </div>
+  <div class="byline">칼럼니스트 박대석 &nbsp;|&nbsp; 고양시서울편입추진위원회 사무총장</div>
+
+  <!-- 1 -->
+  <h2>코펜하겐과 비엔나가 세계 최고인 이유</h2>
+  <div class="sub-h2">EIU 순위 1·2위, 그 비결은 '살 집의 안심'이었다</div>
+
+  <p>2025년 이코노미스트 인텔리전스 유닛(EIU)이 전 세계 173개 도시를 대상으로 발표한 '세계에서 가장 살기 좋은 도시' 순위에서 덴마크 코펜하겐이 마침내 1위를 차지했다. 안정성·교육·인프라 세 부문에서 만점을 받아 종합 98점을 기록한 것이다. 오스트리아 비엔나는 2위, 스위스 취리히가 3위에 올랐다. 비엔나가 코펜하겐에 자리를 내준 건 테러 위협으로 안정성 점수가 소폭 하락했기 때문이지, 두 도시 모두 세계 도시 문명의 최정점에 서 있다는 사실은 변하지 않는다.</p>
+
+  <p>이 순위가 주목받는 이유는 단순히 살기 편한 도시를 줄 세우기 때문이 아니다. 세계 인재들이 어디에 뿌리를 내리고 기업을 세우고 삶을 설계하는지를 보여주는 나침반이기 때문이다. 리처드 플로리다의 창조계층 이론은 인재가 먼저 도시를 선택하고, 그 인재를 따라 기술과 자본과 기업이 흘러온다고 갈파했다. 코펜하겐과 비엔나, 취리히가 매년 최상위권을 차지하는 건 창조계층이 그 도시들을 선택하기 때문이고, 그 결과로 기업과 일자리와 세수가 선순환하기 때문이다.</p>
+
+  <p>비엔나의 비결은 의외로 단순하다. 비엔나 시민의 60% 이상이 시 정부 또는 비영리 주택회사가 공급하는 사회주택에 거주한다. OECD 2018년 기준으로 전체 주택 중 사회주택 비중이 약 43%에 달한다. 이 중 절반은 시가 직접 운영하는 시영임대주택이고, 나머지 절반은 진흥기금을 통한 제한영리 사회주택이다. 의사·변호사·교사·예술가까지 비엔나 시민의 3분의 2가 입주자격을 갖출 만큼 사회주택은 빈곤층이 아닌 중산층의 집이다. 임차 계약은 평생 유지되며 원하면 자녀에게 양도도 가능하다. 시민들은 소득의 15~18%만 주거비로 낸다. 이 시스템 덕분에 비엔나 집값은 2000년부터 2019년까지 20년간 2.5배 상승에 그쳤다. 파리·런던이 같은 기간 4.5배 가까이 치솟은 것과 대조적이다. 2024년 비엔나시는 '하우징 오펜시브 2024+'를 선언하며 28억 유로, 약 4조 3천억 원을 투입해 2만 2200호를 추가 공급하겠다고 밝혔다. 공공임대 확장의 고삐를 100년째 늦추지 않겠다는 의지다.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <span class="stat-num">60%+</span>
+      <div class="stat-desc">비엔나 시민 중<br>사회주택 거주 비율</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">43%</span>
+      <div class="stat-desc">전체 주택 중<br>사회주택 비중<br>(OECD 2018 기준)</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">15~18%</span>
+      <div class="stat-desc">소득 대비<br>주거비 비율</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">7%</span>
+      <div class="stat-desc">한국 전체<br>공공임대 비중<br>(비엔나의 6분의 1)</div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <h2>고양시는 왜 세계 10대 도시 후보였나</h2>
+  <div class="sub-h2">잠재력은 비엔나급, 현실은 '팔리지 않는 집'의 도시</div>
+
+  <p>뉴스위크지가 고양시를 '세계 10대 도시'의 반열에서 언급했을 때, 많은 시민들은 어리둥절했다. 그 무렵 일산 신도시는 분당 대비 절반에도 못 미치는 집값으로 저평가 논란에 시달리고 있었고, 재정자립도는 32%대에 머물러 있었다. 그런데도 세계 언론이 고양시에 주목한 건 도시가 가진 환경 자원 때문이었다. 한강과 70여 개의 하천, 일산 호수공원을 비롯한 광활한 녹지, 연간 531만 명이 찾는 킨텍스, 서울과 맞닿은 지리적 입지. 이 자연 자원과 인문 자원의 조합은 코펜하겐이나 비엔나에 견주어도 손색이 없는 수준이다.</p>
+
+  <div class="highlight-box">
+    "인재가 먼저 살고 싶어야 기술이 따라오고 기업이 찾아온다."<br>
+    — 리처드 플로리다, 『창조계급의 부상(The Rise of the Creative Class)』
+  </div>
+
+  <p>문제는 그 잠재력이 현실로 구현되지 못했다는 점이다. 고양시의 무주택 가구 비율은 전체의 44%에 달한다. 한국 전체 공공임대 비중이 7% 수준에 머무는 상황에서 고양시도 이 한계를 넘지 못하고 있다. 비엔나 60%와 한국 7%의 격차는 단순한 통계 수치가 아니다. 그 격차만큼 창조계층은 고양시를 외면하고, 기업과 자본은 다른 도시를 선택한다. 일산 신도시 집값이 분당의 절반에 그치는 것은 수요 부족만의 문제가 아니다. 분당은 강남 수요가 뒷받침하지만 일산은 그 수요 기반 자체가 취약하다. 팔리지도 않는 집을 붙잡고 있는 유주택자도, 주거비 부담에 치이는 무주택자도, 모두 도시 성장의 과실을 누리지 못하고 있다.</p>
+
+  <!-- 3 -->
+  <h2>고양형 비엔나 모델, 유동화채권으로 길을 열어라</h2>
+  <div class="sub-h2">LH 공동 매입 + 임대료 현금흐름 기초 채권 발행, 재정 부담 없이 공공임대 확대</div>
+
+  <p>여기서 제안하는 것이 '고양형 비엔나 모델'이다. 핵심은 두 가지다. 첫째, LH(한국토지주택공사)와 고양시가 공동으로 설립하는 가칭 <strong>'고금자리 주택단'</strong>이 팔리지 않는 중·소형 아파트를 매입해 공공임대로 전환한다. 매수 가격은 매도자 측 감정평가액과 매수자 측 감정평가액, 두 감정평가 기관의 평균가를 기준으로 삼는다. 소유자의 자발적 동의를 전제로 하기 때문에 강제 수용 논란을 피하면서도 시장 신뢰를 유지할 수 있고, 유주택자에게는 막혀 있던 현금 유동성 출구가 열린다. 둘째, 매입한 주택의 임대료 현금흐름을 기초자산으로 '고양형 공공임대 유동화채권'을 발행해 재원을 조달한다. 단기 재정 부담을 분산하고, 연기금·은행·외국인 투자자를 공공임대 시장으로 끌어들이는 구조다.</p>
+
+  <p>비엔나 공공임대의 출발점도 1919년 제1차 세계대전 직후 극심한 주택난 속에서, '붉은 빈(Rotes Wien)' 시대의 사회민주당 시 정부가 임대 수익에 세금을 물려 재원을 마련한 데서 시작했다. 당시의 과감한 정치적 결단이 오늘의 비엔나를 만든 것이다. 고양시에는 지금 그 결단을 내릴 수 있는 여건이 갖춰져 있다. 44%에 달하는 무주택자 규모는 공공임대 수요를 뒷받침하고, 108만 시민 안에 잠재한 17만 지식노동자는 양질의 주거 환경만 갖춰지면 창조계층으로 도시 성장을 이끌 역량이 충분하다.</p>
+
+  <p>집값 억제가 유주택자 재산권을 침해한다는 반론, 공공임대 단지가 집중되면 지역 이미지가 낮아질 수 있다는 걱정도 존재한다. 그러나 비엔나의 경험은 정반대를 말한다. 공공임대 비중이 높을수록 집값이 장기적으로 안정되고, 그 안정성이 인재 유입을 촉진하며, 그 인재가 기업과 일자리를 만들어낸다. 억제가 목적이 아니라 안정이 목적이다.</p>
+
+  <!-- 4 -->
+  <h2>한강과 창릉천이 만드는 고양형 코펜하겐</h2>
+  <div class="sub-h2">주거비 문제가 해결되는 순간, 고양시는 이미 세계 수준의 녹색 도시</div>
+
+  <p>주거비 문제가 해결되면 고양시는 그 즉시 비엔나·코펜하겐형 도시의 면모를 드러낼 수 있다. 한강과 70여 개의 하천은 코펜하겐의 수변 환경에 버금간다. 창릉천과 한강을 연결하는 수변 축, '물빛나라·물꽃나라' 프로젝트가 완성되면 고양시 북쪽에서 서울 한강까지 자전거와 도보로 이어지는 광역 녹지망이 실현된다. 킨텍스와 연계한 국제회의 허브, 국립암센터를 포함한 6개 대형병원이 집적된 바이오·의료 R&D 클러스터, 대곡역 5·7호선 교통 허브는 고양시가 단순한 베드타운이 아닌 자족도시로 도약하는 산업 인프라가 될 수 있다. 고양콘은 누적 85만 명의 관객과 125억 원의 경제 효과를 냈지만, 이런 문화 인프라가 진정한 도시 경쟁력으로 전환되려면 그것을 소비하고 창조하는 인재들이 이 도시에 살아야 한다. 미국 러스트벨트의 쇠락과 파주 LCD 단지의 추락이 그 반면교사다.</p>
+
+  <!-- ★ 기대효과 섹션 ★ -->
+  <h2>고양형 비엔나 모델 + 서울 편입의 실제 기대효과</h2>
+  <div class="sub-h2">무주택 시민부터 정부까지, 누가 무엇을 얻는가</div>
+
+  <p>고양형 비엔나 모델이 실행되고 서울 편입이 이루어질 때 각 주체에게 돌아가는 효과는 추상적 구호가 아니라 구체적이고 실측 가능한 변화다. 고양시 무주택 가구 44%, 유주택 가구 56%, 총 108만 시민 그리고 서울시와 중앙정부 각각의 입장에서 무엇이 달라지는지 짚어본다.</p>
+
+  <div class="effect-section">
+
+    <!-- 무주택 고양시민 -->
+    <div class="effect-group">
+      <div class="effect-header notenant">
+        <span>🏠 무주택 고양시민</span>
+        <span class="effect-badge">전체의 44%, 약 47만 명</span>
+      </div>
+      <div class="effect-body">
+        <div class="effect-item">
+          <span class="effect-icon">💰</span>
+          <div class="effect-text">
+            <strong>주거비 부담이 실질적으로 줄어든다.</strong> 공공임대 전환 주택이 늘어나면 민간 전월세 시장 가격도 함께 안정된다. 비엔나 사례처럼 사회주택 비중이 40%를 넘어서면 민간 임대료도 시세의 절반 수준으로 유지된다. 현재 고양시 자체 무주택자 지원 제도는 사실상 전무한 실정이지만, 서울 편입 시 서울시복지재단·SH공사의 임차보증금 지원, 전월세 지원, 청년·신혼부부 임차지원 등 서울시 연간 45조 원 예산을 기반으로 한 종합 주거서비스를 그대로 받을 수 있다.
+            <em>출처: 고양시 내부 자료(무주택 44%), 서울시복지재단 주거지원사업 현황</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🚇</span>
+          <div class="effect-text">
+            <strong>교통비와 통근 시간이 크게 절약된다.</strong> 현재 고양시 통근·통학인구 58만 5천 명 중 16만 3천 명이 매일 서울로 출퇴근한다. 서울 편입이 이루어지면 광역버스가 서울 시내버스로 전환되어 기후동행카드 사용이 가능해지고, 서울교통공사가 시내 형평성 원칙에 따라 지하철 노선 증설을 추진하게 된다. GTX-A 개통 후 대곡역 이용객이 이미 257% 급증한 것은 고양시가 서울 교통망과 연결될 때 어떤 변화가 오는지 보여주는 예고편이다.
+            <em>출처: 통계청 통근통학 통계(2020), 뉴스1 GTX-A 이용객 257% 증가(2025.5.19)</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">📚</span>
+          <div class="effect-text">
+            <strong>자녀 교육 기회가 넓어진다.</strong> 고양시는 최근 4년('19~'22) 연간 전출입이 약 30만 명에 달하는 수퍼베드타운이 됐다. 10대 연령 전출 원인 1위는 교육이다. 서울 편입으로 서울 학군 소속이 되면 명문 중·고교와 대학 접근이 가능해져 자녀 교육을 위해 고양시를 떠나는 인구 유출이 멈춘다.
+            <em>출처: 국내이동통계, 고양시 '교육' 전출 증가 추세(통계청)</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">💼</span>
+          <div class="effect-text">
+            <strong>일자리 선택 폭이 넓어지고 청년 잔류율이 올라간다.</strong> 고양시 인구 대비 종사자 수 비율은 31.01%로 유사 규모 지자체 대비 저조하다. 서울 편입과 공공임대 확대로 창조계층이 고양시에 정착하면, 스타트업·바이오·IT 등 지식기반 기업이 뒤따라 입주해 양질의 일자리가 생겨난다.
+            <em>출처: 고양특례시 경제자유구역 기본구상 수립연구(고양시정연구원, 2022.12)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 유주택 고양시민 -->
+    <div class="effect-group">
+      <div class="effect-header tenant">
+        <span>🏡 유주택 고양시민</span>
+        <span class="effect-badge">전체의 56%, 약 60만 명</span>
+      </div>
+      <div class="effect-body">
+        <div class="effect-item">
+          <span class="effect-icon">📈</span>
+          <div class="effect-text">
+            <strong>집값이 점진적으로 정상화된다.</strong> 일산 1기 신도시는 같은 시기 분양한 분당 대비 아파트 가격이 절반 이하다. 현재 1기 신도시 특별법으로 재건축 요건이 완화됐지만, 원자재값 상승과 집값 정체로 사업성이 없다는 판단에 사업 추진이 더디다. 여기서 고금자리 주택단의 역할이 결정적이다. 고금자리 주택단이 두 감정평가 기관의 평균가를 기준으로 매물을 지속적으로 소화하면, 지금처럼 팔리지 않아 집값이 바닥에 눌리는 구조가 깨진다. 시장에 꾸준한 수요자가 존재한다는 신호 자체가 가격 안정과 상승의 심리적 지지선이 된다. 여기에 서울 편입이 이루어지면 '서울 소재 아파트'라는 브랜드 효과가 더해져 최소한 인접한 은평구 수준, 약 30% 이상의 가치 상승을 기대할 수 있다.
+            <em>출처: 호갱노노 평당가 비교(2025 하반기), 박대석 서울편입 분석 자료</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🏗️</span>
+          <div class="effect-text">
+            <strong>재건축·재개발 사업성이 회복된다.</strong> 고금자리 주택단이 두 감정평가 기관 평균가로 매물을 꾸준히 매수하면, 재건축 조합 입장에서는 분담금 부담이 줄고 사업성 계산이 달라진다. 서울 편입 후 서울시 예산(연간 45조 원 규모)이 1기 신도시 재건축에 투입될 수 있는 여건이 만들어진다. 서울시와 동일한 행정 기준 적용으로 용적률 상향, 안전진단 완화 등 재건축 규제가 실질적으로 풀린다.
+            <em>출처: 서울시 연간 예산 현황, 1기 신도시 특별법 분석</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🏭</span>
+          <div class="effect-text">
+            <strong>기피시설 갈등이 해소되고 생활환경이 개선된다.</strong> 현재 고양시에는 서울시가 운영하는 기피시설이 벽제화장장(서울시립승화원)·벽제묘지·난지물재생센터 등 6개소가 있고, 추가 소각장 건립 계획까지 발표된 상태다. 서울 편입 후에는 동일 지역 주민 신분으로 공원·문화시설 등 핌피(PIMFY) 시설로의 전환을 정당하게 요구할 수 있다.
+            <em>출처: 서울시 고양 내 기피시설 현황 자료</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🌳</span>
+          <div class="effect-text">
+            <strong>삼중 규제가 풀려 토지·부동산 활용 가능성이 넓어진다.</strong> 고양시 면적의 100%가 과밀억제권역, 39%가 군사시설보호구역, 32%가 개발제한구역이다. 1983년 인구 팽창 시대에 만들어진 규제가 인구 감소 시대에도 그대로 적용되고 있다. 서울 편입 특별법에 규제 완화를 명시하면 공업 물량 0.04%에 불과한 용도지역 제한이 풀려 고양시 토지 가치가 전반적으로 상승한다.
+            <em>출처: 고양시 규제 현황(수도권정비계획법·국토계획법·군사기지법)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 고양시민 전체 -->
+    <div class="effect-group">
+      <div class="effect-header citizen">
+        <span>🌆 고양시민 전체</span>
+        <span class="effect-badge">108만 명 공통 효과</span>
+      </div>
+      <div class="effect-body">
+        <div class="effect-item">
+          <span class="effect-icon">🏦</span>
+          <div class="effect-text">
+            <strong>재정자립도가 구조적으로 개선된다.</strong> 현재 고양시 재정자립도는 32%대 중반으로 경기도 31개 시군 중 16위, 특례시 중 최하위권이다. 서울시 재정자립도 76%와 비교하면 두 배 이상 차이가 난다. 서울 편입으로 서울시 재정에 통합되면 1인당 지방세 수준이 현재 약 48만 원에서 서울시 수준인 약 180만 원 규모로 대폭 개선되어, 행정 서비스의 질과 복지 수준이 함께 올라간다.
+            <em>출처: 고양시 재정 공시(2026), 서울시 재정자립도 통계</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🌿</span>
+          <div class="effect-text">
+            <strong>한강을 더 입체적으로 누릴 수 있게 된다.</strong> 현재 리버버스는 잠실~여의도 구간에 한정되어 있다. 서울 편입 후 행주~상암~여의도~잠실 구간으로 한강 리버버스 노선이 연장되면, 고양시 시민이 수상교통을 생활 이동 수단으로 이용하는 코펜하겐식 수변도시 생활이 현실이 된다.
+            <em>출처: 서울시 리버버스 운영 계획 현황</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🏥</span>
+          <div class="effect-text">
+            <strong>국립암센터 등 6개 대형병원이 바이오 R&D 클러스터로 도약한다.</strong> 공공임대 확대로 청년 의료·연구 인력이 고양시에 정착하면, 판교테크노밸리처럼 바이오·의료 기업 생태계가 자연스럽게 형성된다. 현재 성남시 상장기업 135개 대비 고양시 4개라는 격차가 좁혀지기 시작한다.
+            <em>출처: 한국거래소·언론 분석(고양시 상장기업 현황)</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🚲</span>
+          <div class="effect-text">
+            <strong>창릉천~한강 녹지축이 '고양형 코펜하겐'을 완성한다.</strong> 창릉천과 한강을 잇는 수변 녹지망이 구축되면 자전거·도보로 서울 한강공원까지 이어지는 광역 생태 통로가 탄생한다. 비엔나 녹지 비율 50%에는 못 미치지만, 70여 개 하천과 호수공원을 엮어내면 도심 내 세계 수준의 자연환경을 갖추게 된다.
+            <em>출처: 비엔나시 녹지 현황, 물빛나라 수변 프로젝트(박대석 제안)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 서울시 -->
+    <div class="effect-group">
+      <div class="effect-header seoul">
+        <span>🏙️ 서울시</span>
+        <span class="effect-badge">부족한 공간·인프라를 보완하는 상생</span>
+      </div>
+      <div class="effect-body">
+        <div class="effect-item">
+          <span class="effect-icon">🏭</span>
+          <div class="effect-text">
+            <strong>만성적으로 부족한 산업시설 공간을 확보한다.</strong> 서울시 면적은 뉴욕(233배), 런던(206배), 베이징(27배)에 비해 극히 협소하다. 고양 편입으로 경제자유구역 지정이 가능한 산업·연구 부지를 확보하면, 서울이 그동안 포화 상태로 수용하지 못했던 R&D 시설·데이터센터·바이오 클러스터를 유치할 수 있다. 킨텍스와 3전시장이 더해지면 서울의 MICE 경쟁력도 함께 강화된다.
+            <em>출처: 서울시 면적 비교 자료, 박대석 서울편입 추진위 발표자료</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🌲</span>
+          <div class="effect-text">
+            <strong>서울의 녹지·어메니티 공간이 대폭 늘어난다.</strong> 서울은 어메니티(Amenity) 시설공간이 턱없이 부족하다. 고양시의 한강 하류 수변, 일산 호수공원, 북한산 자락이 서울 생활권으로 통합되면 서울 시민 전체의 녹지 접근성이 획기적으로 높아진다.
+            <em>출처: 서울시 어메니티 공간 부족 현황</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🗑️</span>
+          <div class="effect-text">
+            <strong>기피시설 갈등이 사라지고 도시 거버넌스 비용이 줄어든다.</strong> 현재 서울시는 고양시에 화장장·묘지·물재생센터·소각장 등 기피시설 6개소 이상을 운영하며 갈등을 빚고 있다. 편입 후에는 동일 지역 주민 합의로 시설을 합리적으로 재배치하거나 현대화할 수 있어 소모적 논쟁과 행정 비용이 줄어든다.
+            <em>출처: 서울시 고양 내 기피시설 현황</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🌐</span>
+          <div class="effect-text">
+            <strong>글로벌 도시 경쟁력 순위가 올라간다.</strong> 옥스퍼드이코노믹스 세계도시지수에서 서울은 2025년 기준 전 세계 1000개 도시 중 15위, 인적자본 부문 세계 5위다. 108만 명의 인구와 창조계층을 품은 고양이 서울로 흡수되면 인구 규모와 도시 경쟁력 지표가 동시에 올라간다.
+            <em>출처: 옥스퍼드이코노믹스 세계도시지수(2025)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 정부(중앙) -->
+    <div class="effect-group">
+      <div class="effect-header gov">
+        <span>🏛️ 중앙정부</span>
+        <span class="effect-badge">한국 부동산 대개혁의 시범무대</span>
+      </div>
+      <div class="effect-body">
+        <div class="effect-item">
+          <span class="effect-icon">🏚️</span>
+          <div class="effect-text">
+            <strong>한국 가계 자산의 부동산 편중 구조를 최초로 실험적으로 개혁한다.</strong> 한국 가계 자산에서 부동산 비중은 약 75%로 OECD 최고 수준이다. 비엔나형 공공임대 모델이 고양시에서 성공적으로 작동하면, 임대 안정이 자산 다양화를 촉진한다는 실증 사례가 생겨 전국 확산의 정책 근거가 마련된다.
+            <em>출처: OECD 가계 자산 부동산 비중 통계</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">💡</span>
+          <div class="effect-text">
+            <strong>대규모 재정 투입 없이 108만 생활권 불평등을 해소하는 선례를 만든다.</strong> 비수도권 광주·전남 행정통합에는 4년간 20조 원 이상의 국가 재정이 투입된다. 고양시 서울 편입은 특별법 제정과 행정 경계 조정만으로 교통·교육·복지·주거 전반의 불평등을 해소할 수 있어, 국가 예산 대비 효율성이 압도적으로 높은 도시정책 모델이 된다.
+            <em>출처: 헤럴드경제 광주·전남 통합 공청회(2026.2.9), 행안위 행정통합법 의결(2026.2.18)</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">🤝</span>
+          <div class="effect-text">
+            <strong>메가시티 전략의 실증 모델로 국가 도시 경쟁력 정책을 이끈다.</strong> 국가 간 경쟁보다 도시 간 경쟁이 앞서는 시대다. 샌프란시스코·뉴욕·런던 등 6개 메가리전이 전 세계 첨단기술 벤처자본의 절반을 끌어들인다. 고양을 포함한 메가시티 서울이 완성되면 아시아 도시 경쟁에서 서울의 위상이 달라진다.
+            <em>출처: 리처드 플로리다 메가리전 이론, 옥스퍼드이코노믹스 도시경쟁력 보고서</em>
+          </div>
+        </div>
+        <div class="effect-item">
+          <span class="effect-icon">📉</span>
+          <div class="effect-text">
+            <strong>서울 강남 집중 수요를 분산하는 효과가 생긴다.</strong> 강남 아파트는 2026년 현재 평당 1억 원을 넘어섰다. 서울~고양 교통이 일체화되고 주거비가 안정되면, 강남 수요의 일부가 자연스럽게 고양으로 분산된다. 이는 강남 집중으로 인한 수도권 부동산 양극화(서울 5분위 배율 6.8배)를 구조적으로 완화하는 효과를 낸다.
+            <em>출처: 서울경제(2026.1.7) 강남 평당 1억 돌파, 시사저널e 5분위 배율 6.8배(2025.12)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /effect-section -->
+
+  <!-- 5 -->
+  <h2>서울 편입, 당근이자 시범무대</h2>
+  <div class="sub-h2">특별법 하나로 교통·교육·주거·규제를 동시에 푸는 원스톱 해법</div>
+
+  <p>이 모든 구상의 완성형은 고양시의 서울 편입이다. 현재 고양시 시민 16만 3천 명이 매일 서울로 출퇴근한다. 3인 가족 기준으로 고양시 인구의 절반이 이미 서울과 같은 생활권이다. 그러나 행정구역 선 하나로 교통·학군·일자리·복지 전반에서 극심한 불평등을 감내하고 있다. 2023년 국민의힘 고양병 당협 설문에서 응답자의 92.3%가 서울 편입에 찬성한 건 이 불평등에 대한 민심의 표현이다.</p>
+
+  <p>비수도권 행정통합에는 4년간 20조 원이 넘는 국가 재정이 투입되고 있다. 고양시의 서울 편입은 별도의 대규모 재정 투입 없이 행정 경계 조정만으로 108만 시민의 삶을 획기적으로 개선할 수 있는, 가장 효율적인 메가시티 전략이다. 정부가 고양시에 서울 편입의 문을 열어주는 것, 그것이 고양형 비엔나 모델을 실현할 정치적 당근이자 국가 부동산 개혁의 첫 단추다.</p>
+
+  <!-- 6 -->
+  <h2>2026년 6월, 고양시민이 선택해야 할 시장</h2>
+  <div class="sub-h2">금융 이해력·정치력·도시 비전, 세 가지를 동시에 갖춘 인물이어야 한다</div>
+
+  <p>2026년 6월 지방선거는 고양시의 30년 미래를 결정하는 분기점이다. 이 선거에서 고양시민이 선택해야 할 시장은 비엔나와 코펜하겐이 무엇으로 세계 최고 도시가 됐는지를 이해하는 사람이어야 한다. 공공임대 유동화채권의 구조를 설계하고 LH와 협상 테이블에 앉을 수 있는 금융 이해력, 서울시·중앙정부와의 편입 협상을 끌어낼 정치력, 창조계층을 불러들일 도시 비전 제시 능력이 동시에 요구된다.</p>
+
+  <p>인재가 모이면 기술이 따라오고, 기술이 있는 곳에 기업이 찾아온다. 기업이 찾아오면 일자리가 생기고, 일자리가 생겨야 세수가 늘어 도시 서비스가 나아진다. 이 선순환의 첫 문을 여는 열쇠가 바로 '살기 좋은 도시'다. 고양시는 그 열쇠를 이미 자연과 인문 자원 속에 품고 있다. 이제 필요한 건 그 열쇠를 돌릴 수 있는 정치 자원이다.</p>
+
+  <div class="highlight-box">
+    이념보다 실력, 구호보다 실행력, 관리보다 창조의 시대다.<br>
+    고양시가 비엔나·코펜하겐처럼 세계 창조계층이 선택하는 도시가 되느냐,<br>아니면 영원한 수퍼베드타운으로 남느냐는 이번 선택에 달려 있다.
+  </div>
+
+  <!-- 참고자료 나열형 -->
+  <div class="ref-section">
+    <div class="ref-title">주요 참고 출처</div>
+    <ul class="ref-list">
+      <li>EIU 글로벌 리버빌리티 인덱스 (2025) — 코펜하겐 1위(98점), 비엔나 2위, 취리히 3위; 전 세계 173개 도시 평가</li>
+      <li>OECD 사회주택 데이터 (2018) / 비너보넨 발표자료 — 비엔나 시민 60%+ 사회주택 거주, 전체 주택 중 사회주택 43%; 시영임대 절반·진흥기금 절반</li>
+      <li>이데일리 「의사도, 교사도 공공임대에 산다」 (2024) — '하우징 오펜시브 2024+'; 28억 유로(약 4.3조 원) 투입, 2만 2200호 추가 공급</li>
+      <li>비엔나시 통계·나무위키 종합 — 2000~2019년 집값 2.5배 상승(파리·런던 4.5배 대비); 소득 대비 주거비 15~18%</li>
+      <li>통계청 통근통학 통계 (2020) — 고양시 총 통근통학인구 585,185명 중 서울 163,298명</li>
+      <li>국민의힘 고양시(병) 당협 설문 (2023.11) — 응답자 2,823명 중 92.3% 서울 편입 찬성</li>
+      <li>고양시 재정 공시 (2026) — 재정자립도 32%대 중반, 경기도 16위</li>
+      <li>고양특례시 경제자유구역 기본구상 수립연구 (고양시정연구원, 2022.12) — 인구 대비 종사자 비율 31.01%</li>
+      <li>뉴스1 (2025.5.19) — GTX-A 대곡역 이용객 개통 후 257% 증가(4,341→15,478명)</li>
+      <li>헤럴드경제 (2026.2.13) — 이동환 시장 인터뷰, 고양콘 누적 관객 85만 명·경제 효과 125억 원</li>
+      <li>헤럴드경제 (2026.2.9) / 아시아경제 (2026.2.13) — 광주·전남 통합; 4년간 20조 원, 연 5조 원 재정 지원 요구</li>
+      <li>서울경제 (2026.1.7) — 강남구 평당 1억 원 돌파; 시사저널e (2025.12) — 서울 5분위 배율 6.8배 역대 최고</li>
+      <li>옥스퍼드이코노믹스 세계도시지수 (2025) — 서울 전 세계 15위, 인적자본 5위</li>
+      <li>리처드 플로리다, 『창조계급의 부상(The Rise of the Creative Class)』 — 인재(Talent)→기술(Technology)→관용(Tolerance) 3T 모델</li>
+    </ul>
+  </div>
+
+  <footer>
+    칼럼니스트 박대석<br>
+    고양시서울편입추진위원회 사무총장
+  </footer>
+
+</div>
+</body>
+</html>
